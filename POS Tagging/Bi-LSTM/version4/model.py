@@ -136,9 +136,9 @@ embedded_sequences = embedding_layer(sequence_input)
 l_lstm = Bidirectional(LSTM(UNITS_IN_LSTM_LAYER, return_sequences=True), merge_mode='sum')(embedded_sequences)
 preds = TimeDistributed(Dense(n_tags, activation='softmax'))(l_lstm)
 
-weightFile = 'weightFile' + '-{epoch:d}-{loss:.2f}.wts'
-checkpointCallback = ModelCheckpoint(weightFile, monitor='val_loss', verbose=0,
-                                    save_best_only=True, save_weights_only=False, mode='auto', save_freq='epoch')
+# weightFile = 'weightFile' + '-{epoch:d}-{loss:.2f}.wts'
+# checkpointCallback = ModelCheckpoint(weightFile, monitor='val_loss', verbose=0,
+#                                     save_best_only=True, save_weights_only=False, mode='auto', save_freq='epoch')
 
 model = Model(sequence_input, preds)
 
@@ -152,7 +152,7 @@ model.summary()
 
 history  = model.fit(train_generator, 
                      steps_per_epoch=n_train_samples//BATCH_SIZE,
-                     callbacks=[checkpointCallback],
+                     #callbacks=[checkpointCallback],
                      validation_data=validation_generator,
                      validation_steps=n_val_samples//BATCH_SIZE,
                      epochs=EPOCHS,
