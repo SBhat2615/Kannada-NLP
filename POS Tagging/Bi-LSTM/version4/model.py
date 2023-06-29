@@ -30,7 +30,7 @@ TEST_SPLIT = 0.05
 VALIDATION_SPLIT = 0.05
 BATCH_SIZE = 64
 UNITS_IN_LSTM_LAYER = 64
-EPOCHS = 15
+EPOCHS = 35
 
 with open('all_data.pkl', 'rb') as f:
     X, y, word2int, int2word, tag2int, int2tag = pickle.load(f)
