@@ -191,8 +191,8 @@ print(int2tag)
 print('X_test shape ', X_test.shape)
 print('Y_pred shape ' , y_pred.shape)
 
-y_pred = y_pred.reshape(-1, 77)
-y_test = y_test.reshape(-1, 77)
+y_pred = y_pred.reshape(-1, 78)
+y_test = y_test.reshape(-1, 78)
 
 
 # print('Y_pred shape ' , y_pred.shape)
